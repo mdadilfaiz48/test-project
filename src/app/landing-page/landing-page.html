@@ -1,0 +1,48 @@
+<div class="parent">
+  <div class="form-div">
+    <form [formGroup]="singUpValidations" (ngSubmit)="onSubmit()">
+      <div>
+        <span class="error" *ngIf="name?.errors?.['required'] && (name?.dirty || name?.touched)"
+          >name is required</span
+        >
+        <input type="text" placeholder="Enter Full Name" formControlName="name" />
+      </div>
+
+      <div>
+        <span
+          class="error"
+          *ngIf="mobileNo?.errors?.['required'] && (mobileNo?.dirty || mobileNo?.touched)"
+        >
+          invalid mobileNo
+        </span>
+        <input type="text" placeholder="Enter mobileNo" formControlName="mobileNo" />
+      </div>
+      <div>
+        <span class="error" *ngIf="email?.errors?.['required'] && (email?.dirty || email?.touched)">
+          Invalid email ID
+        </span>
+        <input type="email" placeholder="Enter email" formControlName="email" />
+      </div>
+      <div>
+        <span
+          class="error"
+          *ngIf="password?.errors?.['required'] && (password?.dirty || password?.touched)"
+        >
+          Password is required
+        </span>
+        <input type="password" placeholder="Create Password" formControlName="password" />
+      </div>
+      <div>
+        <button type="submit">Sign up</button>
+      </div>
+    </form>
+  </div>
+  <div class="text-div">
+    <h1>
+      <b><em>C O L L A G E</em></b>
+    </h1>
+    <h2>Student Login Here</h2>
+    <p>-If you are visited on my page first time then please sign up</p>
+    <p>-Find collage information after sign up</p>
+  </div>
+</div>
