@@ -13,12 +13,13 @@
   grid-row: span 3 / span 3;
   grid-column-start: 4;
   grid-row-start: 2;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 500px;
   height: 500px;
   border-radius: 1rem;
+  border: 3px solid white;
 
-  background-color: cornflowerblue;
+  /* background-color: rgb(123, 127, 135); */
 }
 
 .text-div {
@@ -36,18 +37,23 @@ form {
 }
 
 form input {
-  margin-top: 30px;
+  margin-top: 40px;
   height: 35px;
   width: 270px;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   border: 1px solid #e4d9d9; /* default border */
   padding: 5px 10px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* smooth effect */
+  /* background-color: rgb(119, 116, 116); */
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  color: black;
 }
 
 /* ✅ Blue border and glow when hovered */
 form input:hover {
-  border-color: rgb(10, 60, 209);
+  border-color: rgba(55, 122, 46, 0.996);
   box-shadow: 0 0 4px rgba(65, 105, 225, 0.5);
 }
 
@@ -64,7 +70,7 @@ body {
 
 button {
   border-radius: 0.5rem;
-  background-color: rgb(85, 85, 219);
+  background: rgba(55, 122, 46, 0.996);
   color: white;
   cursor: pointer;
 }
@@ -85,13 +91,404 @@ button {
 h1 b em {
   font-size: 70px;
   font-weight: 1rem;
-  color: blueviolet;
+  color: rgb(137, 186, 153);
 }
 
 .text-div h2 {
   font-size: 30px;
+  color: wheat;
 }
 
 .text-div p {
   font-size: 18px;
+  color: white;
+}
+.text-div {
+  height: 300px;
+}
+
+/*************social media style *************/
+
+.social-media {
+  display: flex;
+  margin-top: 170px;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+
+  /* border: 1px solid black; */
+  height: 180px;
+  width: 630px;
+}
+
+.social-media a {
+  text-decoration: none;
+  /* font-weight: 2rem;
+  font-size: 1rem; */
+  text-align: center;
+}
+
+.linkedin,
+.facebook,
+.instagram,
+.telegram {
+  height: 30px;
+  width: 100px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.linkedin img,
+.instagram img,
+.telegram img,
+.facebook img {
+  width: 20px;
+  height: 20px;
+}
+
+.telegram {
+  /* Existing 3D base styles */
+  transform: rotate(-30deg) skew(25deg);
+  margin: 10px;
+  transform: translate(0, 0); /* Correct usage for 2D translation */
+
+  /* Apply transition to the element to make the hover smooth */
+  transition: 0.5s;
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+  background-color: white; /* Set a starting color for the div itself */
+}
+
+/* ==================================== */
+/* 1. BASE STYLE (TELEGRAM DIV)         */
+/* ==================================== */
+.telegram {
+  /* This is the initial 3D angle */
+  transform: rotate(-30deg) skew(25deg);
+  margin: 10px;
+
+  /* Initial position (required for smooth transition) */
+  /* Combine all 2D/3D functions into one 'transform' rule in the base state */
+  /* translate(0, 0) is better than your previous translate: (0, 0) */
+  transform: rotate(-30deg) skew(25deg) translate(0, 0);
+
+  /* Set background color and transition for the main box */
+  background-color: #f0f0f0; /* Light default color */
+  transition: 0.5s;
+
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================================== */
+/* 2. PSEUDO-ELEMENT BASE STYLES        */
+/* ==================================== */
+
+/* Ensure the a element and its pseudo-elements also have a transition for color change */
+.telegram a::before,
+.telegram a::after {
+  transition: 0.5s;
+}
+
+.telegram a::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background-color: #b1b1b1; /* Default side color */
+  transform: rotate(0deg) skewY(-45deg); /* Corrected from your original skew(-45deg) */
+}
+.telegram a::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background-color: #b1b1b1; /* Default bottom color */
+  transform: rotate(0deg) skewX(-45deg); /* Corrected from your original skew(-45deg) */
+}
+
+/* ==================================== */
+/* 3. HOVER STATE (MOVE UP & COLOR)     */
+/* ==================================== */
+
+.telegram:hover {
+  /* ⬆️ LIFT EFFECT: Combine initial transform with a translate to move it up/right */
+  /* -15px moves it up, +20px moves it right (due to the -30deg rotation) */
+  transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+
+  /* 🎨 COLOR CHANGE: Set the Telegram blue on the main face */
+  background-color: #0088cc;
+
+  /* 💡 SHADOW CHANGE: Make the shadow larger and darker */
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Change the text color on hover (assuming 'a' is the text) */
+.telegram:hover a {
+  color: white;
+}
+
+/* 4. HOVER STATE FOR PSEUDO-ELEMENTS (COLOR CHANGE) */
+/* The sides must change color along with the main face */
+.telegram:hover a::before {
+  /* A darker shade for the side face */
+  background-color: #006699;
+}
+
+.telegram:hover a::after {
+  /* A slightly different darker shade for the bottom face */
+  background-color: #00507a;
+}
+/********** instagram ***************************/
+
+/* ==================================== */
+/* 1. BASE STYLE (INSTAGRAM DIV)        */
+/* ==================================== */
+.instagram {
+  /* This is the initial 3D angle - KEEP IT CONSISTENT WITH TELEGRAM */
+  transform: rotate(-30deg) skew(25deg);
+  margin: 10px;
+
+  /* Initial position (required for smooth transition) */
+  transform: rotate(-30deg) skew(25deg) translate(0, 0);
+
+  /* Set a light default background color and transition for the main box */
+  background-color: #f0f0f0; /* Light default color */
+  transition: 0.5s;
+
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================================== */
+/* 2. PSEUDO-ELEMENT BASE STYLES        */
+/* (Assuming the same structure as Telegram) */
+/* ==================================== */
+
+/* Ensure the a element and its pseudo-elements also have a transition for color change */
+.instagram a::before,
+.instagram a::after {
+  transition: 0.5s;
+}
+
+.instagram a::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background-color: #b1b1b1; /* Default side color */
+  transform: rotate(0deg) skewY(-45deg);
+}
+.instagram a::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background-color: #b1b1b1; /* Default bottom color */
+  transform: rotate(0deg) skewX(-45deg);
+}
+
+/* ==================================== */
+/* 3. HOVER STATE (MOVE UP & COLOR)     */
+/* ==================================== */
+
+.instagram:hover {
+  /* ⬆️ LIFT EFFECT: Move it up/right by combining transform and translate */
+  transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+
+  /* 🎨 COLOR CHANGE: Set a color similar to Instagram's brand */
+  background-color: #e1306c; /* Instagram Pink */
+
+  /* 💡 SHADOW CHANGE: Make the shadow larger and darker */
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Change the text color on hover */
+.instagram:hover a {
+  color: white;
+}
+
+/* 4. HOVER STATE FOR PSEUDO-ELEMENTS (COLOR CHANGE) */
+/* The sides must change color along with the main face */
+.instagram:hover a::before {
+  /* A darker shade for the side face */
+  background-color: #a32551;
+}
+
+.instagram:hover a::after {
+  /* A slightly different darker shade for the bottom face */
+  background-color: #8c2044;
+}
+
+/*********************linked in *************************/
+/* ==================================== */
+/* 1. BASE STYLE (LINKEDIN DIV)         */
+/* ==================================== */
+.linkedin {
+  /* This is the initial 3D angle - KEEP IT CONSISTENT */
+  transform: rotate(-30deg) skew(25deg);
+  margin: 10px;
+
+  /* Initial position (required for smooth transition) */
+  transform: rotate(-30deg) skew(25deg) translate(0, 0);
+
+  /* Set a light default background color and transition for the main box */
+  background-color: #f0f0f0; /* Light default color */
+  transition: 0.5s;
+
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================================== */
+/* 2. PSEUDO-ELEMENT BASE STYLES        */
+/* (Assuming the same structure as Telegram/Instagram) */
+/* ==================================== */
+
+/* Ensure the a element and its pseudo-elements also have a transition for color change */
+.linkedin a::before,
+.linkedin a::after {
+  transition: 0.5s;
+}
+
+.linkedin a::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background-color: #b1b1b1; /* Default side color */
+  transform: rotate(0deg) skewY(-45deg);
+}
+.linkedin a::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background-color: #b1b1b1; /* Default bottom color */
+  transform: rotate(0deg) skewX(-45deg);
+}
+
+/* ==================================== */
+/* 3. HOVER STATE (MOVE UP & COLOR)     */
+/* ==================================== */
+
+.linkedin:hover {
+  /* ⬆️ LIFT EFFECT: Move it up/right by combining transform and translate */
+  transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+
+  /* 🎨 COLOR CHANGE: Set the LinkedIn blue on the main face */
+  background-color: #0a66c2; /* 💡 SHADOW CHANGE: Make the shadow larger and darker */
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Change the text color on hover */
+.linkedin:hover a {
+  color: white;
+}
+
+/* 4. HOVER STATE FOR PSEUDO-ELEMENTS (COLOR CHANGE) */
+/* The sides must change color along with the main face */
+.linkedin:hover a::before {
+  /* A darker shade for the side face */
+  background-color: #004f99;
+}
+
+.linkedin:hover a::after {
+  /* A slightly different darker shade for the bottom face */
+  background-color: #003d7a;
+}
+
+/************************facebook**************************/
+/* ==================================== */
+/* 1. BASE STYLE (FACEBOOK DIV)         */
+/* ==================================== */
+.facebook {
+  /* This is the initial 3D angle - KEEP IT CONSISTENT */
+  transform: rotate(-30deg) skew(25deg);
+  margin: 10px;
+
+  /* Initial position (required for smooth transition) */
+  /* Combines the base transform and sets the starting position for movement */
+  transform: rotate(-30deg) skew(25deg) translate(0, 0);
+
+  /* Set a light default background color and transition for the main box */
+  background-color: #f0f0f0; /* Light default color */
+  transition: 0.5s;
+
+  /* Initial shadow depth */
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ==================================== */
+/* 2. PSEUDO-ELEMENT BASE STYLES        */
+/* (Assuming the same structure as the others) */
+/* ==================================== */
+
+/* Ensure the a element and its pseudo-elements also have a transition for color change */
+.facebook a::before,
+.facebook a::after {
+  transition: 0.5s;
+}
+
+.facebook a::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background-color: #b1b1b1; /* Default side color */
+  transform: rotate(0deg) skewY(-45deg); /* Left side/Depth */
+}
+.facebook a::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background-color: #b1b1b1; /* Default bottom color */
+  transform: rotate(0deg) skewX(-45deg); /* Bottom side/Depth */
+}
+
+/* ==================================== */
+/* 3. HOVER STATE (MOVE UP & COLOR)     */
+/* ==================================== */
+
+.facebook:hover {
+  /* ⬆️ LIFT EFFECT: Move it up/right by combining transform and translate */
+  transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+
+  /* 🎨 COLOR CHANGE: Set the Facebook blue on the main face */
+  background-color: #1877f2; /* 💡 SHADOW CHANGE: Make the shadow larger and darker */
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Change the text color on hover */
+.facebook:hover a {
+  color: white;
+}
+
+/* 4. HOVER STATE FOR PSEUDO-ELEMENTS (COLOR CHANGE) */
+/* The sides must change color along with the main face */
+.facebook:hover a::before {
+  /* A darker shade for the side face */
+  background-color: #145cb5;
+}
+
+.facebook:hover a::after {
+  /* A slightly different darker shade for the bottom face */
+  background-color: #114b94;
 }

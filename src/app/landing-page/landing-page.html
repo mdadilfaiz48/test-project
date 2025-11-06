@@ -33,7 +33,7 @@
         <input type="password" placeholder="Create Password" formControlName="password" />
       </div>
       <div>
-        <button type="submit">Sign up</button>
+        <button type="submit" [disabled]="singUpValidations.invalid">Sign up</button>
       </div>
     </form>
   </div>
@@ -44,5 +44,23 @@
     <h2>Student Login Here</h2>
     <p>-If you are visited on my page first time then please sign up</p>
     <p>-Find collage information after sign up</p>
+    <div class="social-media">
+      <div class="facebook">
+        <img src="./assets/facebook-brands-solid-full (1).svg" alt="img" />
+        <a href="#">Facebook</a>
+      </div>
+      <div class="linkedin">
+        <img src="./assets/linkedin-brands-solid-full.svg" alt="img" />
+        <a href="#">Linkedik</a>
+      </div>
+      <div class="instagram">
+        <img src="./assets/instagram-brands-solid-full (1).svg" alt="img" />
+        <a href="#">instagram</a>
+      </div>
+      <div class="telegram">
+        <img src="./assets/telegram-brands-solid-full (1).svg" alt="img" />
+        <a href="#">Telegram</a>
+      </div>
+    </div>
   </div>
 </div>

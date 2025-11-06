@@ -1,0 +1,128 @@
+/*********************************************common css************************************************/
+.parent {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.side-navbar {
+  border: 0.5px solid rgb(147, 143, 143);
+}
+body {
+  margin: 0;
+  padding-top: 60px; /* prevent content from hiding under navbar */
+}
+
+/******************************************header css*****************************************************/
+.header-nav {
+  grid-column: span 8 / span 8;
+  display: flex;
+  justify-content: center;
+
+  justify-content: space-around;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+}
+
+.header-nav img {
+  height: 30px;
+  width: 30px;
+  filter: invert(1) brightness(100%);
+}
+.header-nav input {
+  border-radius: 0.2rem;
+  height: 25px;
+  width: 260px;
+  background: rgb(255, 254, 254);
+}
+.header-nav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(248, 243, 243);
+}
+
+/****** search box *********/
+.search-box {
+  position: relative;
+  display: inline-block;
+}
+
+.search-box img {
+  position: absolute;
+  left: 10px; /* distance from left inside input */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  filter: invert(1); /* optional – makes icon white if black */
+  filter: invert(0%) brightness(0%);
+}
+
+.search-box input {
+  padding-left: 35px; /* gives space for icon inside box */
+  height: 30px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact:hover {
+  border: 2px solid white;
+}
+.about:hover {
+  border: 2px solid rgb(188, 226, 207);
+}
+
+/*******************************************footer css**************************************************/
+.footer {
+  grid-column: span 8 / span 8;
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 11;
+  height: 200px;
+  background-color: rgb(49, 45, 45);
+}
+
+/******************************************************side bar ******************************************/
+.side-navbar {
+  grid-row: span 9 / span 9;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  text-align: center;
+
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  height: calc(100vh - 50px);
+  text-align: center;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.side-navbar a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+/******************************************************body css********************************************/
+.body-content {
+  grid-column: span 7 / span 7;
+  grid-row: span 9 / span 9;
+  grid-column-start: 2;
+  grid-row-start: 2;
+
+  margin-left: 210px; /* Leave space for sidebar */
+  padding: 10px;
+
+  height: 100vh;
+  overflow: auto;
+}

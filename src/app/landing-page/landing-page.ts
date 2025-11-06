@@ -1,8 +1,9 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+
 import { RouterTestingHarness } from '@angular/router/testing';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -39,9 +40,19 @@ export class LandingPage {
   get password(): any {
     return this.singUpValidations.get('password');
   }
-  onSubmit() {
-    console.log(this.singUpValidations.value);
-  }
-
+  // onSubmit() {
+  //   console.log(this.singUpValidations.value);
+  // }
   constructor(private router: Router) {}
+
+  onSubmit() {
+    if (this.singUpValidations.valid) {
+      console.log(this.singUpValidations.value);
+      // 👇 navigate to home page after successful sign up
+      this.router.navigate(['/home']);
+    } else {
+      // mark all fields as touched to show errors
+      this.singUpValidations.markAllAsTouched();
+    }
+  }
 }

@@ -7,4 +7,5 @@ export const routes: Routes = [
     path: '',
     component: LandingPage,
   },
+  { path: 'home', component: Home },
 ];
