@@ -40,7 +40,7 @@ form input {
   margin-top: 40px;
   height: 35px;
   width: 270px;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
   border: 1px solid #e4d9d9; /* default border */
   padding: 5px 10px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* smooth effect */
@@ -134,7 +134,7 @@ h1 b em {
 .telegram {
   height: 30px;
   width: 100px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: white;
   color: black;
   display: flex;
@@ -162,9 +162,6 @@ h1 b em {
   background-color: white; /* Set a starting color for the div itself */
 }
 
-/* ==================================== */
-/* 1. BASE STYLE (TELEGRAM DIV)         */
-/* ==================================== */
 .telegram {
   /* This is the initial 3D angle */
   transform: rotate(-30deg) skew(25deg);
@@ -181,10 +178,6 @@ h1 b em {
 
   box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
 }
-
-/* ==================================== */
-/* 2. PSEUDO-ELEMENT BASE STYLES        */
-/* ==================================== */
 
 /* Ensure the a element and its pseudo-elements also have a transition for color change */
 .telegram a::before,
@@ -212,10 +205,6 @@ h1 b em {
   background-color: #b1b1b1; /* Default bottom color */
   transform: rotate(0deg) skewX(-45deg); /* Corrected from your original skew(-45deg) */
 }
-
-/* ==================================== */
-/* 3. HOVER STATE (MOVE UP & COLOR)     */
-/* ==================================== */
 
 .telegram:hover {
   /* ⬆️ LIFT EFFECT: Combine initial transform with a translate to move it up/right */
@@ -247,9 +236,6 @@ h1 b em {
 }
 /********** instagram ***************************/
 
-/* ==================================== */
-/* 1. BASE STYLE (INSTAGRAM DIV)        */
-/* ==================================== */
 .instagram {
   /* This is the initial 3D angle - KEEP IT CONSISTENT WITH TELEGRAM */
   transform: rotate(-30deg) skew(25deg);
@@ -264,11 +250,6 @@ h1 b em {
 
   box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
 }
-
-/* ==================================== */
-/* 2. PSEUDO-ELEMENT BASE STYLES        */
-/* (Assuming the same structure as Telegram) */
-/* ==================================== */
 
 /* Ensure the a element and its pseudo-elements also have a transition for color change */
 .instagram a::before,
@@ -380,10 +361,6 @@ h1 b em {
   transform: rotate(0deg) skewX(-45deg);
 }
 
-/* ==================================== */
-/* 3. HOVER STATE (MOVE UP & COLOR)     */
-/* ==================================== */
-
 .linkedin:hover {
   /* ⬆️ LIFT EFFECT: Move it up/right by combining transform and translate */
   transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
@@ -411,9 +388,7 @@ h1 b em {
 }
 
 /************************facebook**************************/
-/* ==================================== */
-/* 1. BASE STYLE (FACEBOOK DIV)         */
-/* ==================================== */
+
 .facebook {
   /* This is the initial 3D angle - KEEP IT CONSISTENT */
   transform: rotate(-30deg) skew(25deg);
@@ -430,11 +405,6 @@ h1 b em {
   /* Initial shadow depth */
   box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
 }
-
-/* ==================================== */
-/* 2. PSEUDO-ELEMENT BASE STYLES        */
-/* (Assuming the same structure as the others) */
-/* ==================================== */
 
 /* Ensure the a element and its pseudo-elements also have a transition for color change */
 .facebook a::before,
@@ -462,10 +432,6 @@ h1 b em {
   background-color: #b1b1b1; /* Default bottom color */
   transform: rotate(0deg) skewX(-45deg); /* Bottom side/Depth */
 }
-
-/* ==================================== */
-/* 3. HOVER STATE (MOVE UP & COLOR)     */
-/* ==================================== */
 
 .facebook:hover {
   /* ⬆️ LIFT EFFECT: Move it up/right by combining transform and translate */
