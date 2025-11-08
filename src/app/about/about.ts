@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-contact',
+  selector: 'app-about',
   imports: [RouterLink],
-  templateUrl: './contact.html',
-  styleUrl: './contact.css',
+  templateUrl: './about.html',
+  styleUrl: './about.css',
 })
-export class Contact {
+export class About {
   constructor(private router: Router) {}
 }

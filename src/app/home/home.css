@@ -21,10 +21,9 @@
 .side-navbar {
   /* border: 0.5px solid rgb(147, 143, 143); */
 }
-body {
+/* body {
   margin: 0;
   padding-top: 60px; /* prevent content from hiding under navbar */
-}
 
 /******************************************header css*****************************************************/
 .header-nav {
@@ -60,6 +59,7 @@ body {
   font-size: 20px;
   /* color: rgb(248, 243, 243); */
   color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 /****** search box *********/
@@ -143,6 +143,25 @@ body {
   color: whitesmoke;
   text-decoration: none;
 }
+.side-navbar a:hover {
+  /* 1. Moves the link 3 pixels up */
+  transform: translateY(-5px);
+
+  /* 2. Adds a slight shadow to enhance the "lifted" 3D look */
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+  /* Optional: Change the color on hover */
+  color: gold;
+}
+
+.side-navbar a {
+  /* Crucial: Tells the browser to smoothly animate the changes */
+  transition: transform 0.2s ease-out, text-shadow 0.2s ease-out, color 0.2s;
+
+  /* Crucial: Allows the transform property to work correctly */
+  display: inline-block;
+}
+
 .side-navbar input {
   height: 20px;
   padding-top: 5px;
@@ -157,9 +176,9 @@ body {
   grid-column-start: 2;
   grid-row-start: 2;
 
-  margin-left: 210px; /* Leave space for sidebar */
-  padding: 10px;
+  /* margin-left: 210px; /* Leave space for sidebar */
+  /* padding: 10px; */
 
-  height: 100vh;
-  overflow: auto;
+  /* height: 100vh; */
+  /* overflow: auto; */
 }
